@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  top:350px;
+  right:250px;
+  position:relative;
+  padding: 10px;
+  font-size: 17px;
+  border: 2px solid gre;
+  float: left;
+  width: 200%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  top:306px;
+  left:350px;
+  position:relative;
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 2px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+</head>
+<body>
+
+
+<form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+  <input type="text" placeholder="검색어를 입력하세요" name="search2">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+</body>
+</html> 

@@ -1,0 +1,32 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8">
+  <title>음악</title>
+</head>
+<body>
+</body>
+	<form action="" method="post">
+		<input type="text" name="title" th:value="${keyword}" />
+	</form>
+	<table>
+		<thead>
+			<tr>
+				<td>가수이름</td>
+				<td>노래앨범</td>
+				<td>노래 제목</td>
+				<td>&nbsp;</td>
+			</tr>	
+		</thead>
+		<tbody>
+      		<tr th:each="music : ${music}">
+      			<td th:text="${music.id}">0</td>
+      			<td th:text="${music.album}">0</td>
+      			<td th:text="${#calendars.format(book.published,'yyyy-MM-dd')}">2010-01-01</td>
+      			<td><a href="delete" th:href="@{/delete(id=${book.id})}">삭제</a></td>
+      		</tr>
+      	</tbody>
+	</table>
+	<a href="add">추가</a>	
+</html>

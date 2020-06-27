@@ -1,0 +1,48 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<title>음악</title>
+</head>
+
+<body>
+</body>
+<form action="" method="post">
+	<table>
+		<tbody>
+			<tr>
+				<td>앨범 id:&nbsp; &nbsp;&nbsp; <input type="text" name="id" /></td>
+			</tr>
+			<tr>
+				<td>가수 이름 : <input type="text" name="artist" /></td>
+			</tr>
+			<tr>
+				<td>노래 앨범 : <input type="text" name="Album" /></td>
+			</tr>	
+			<tr>
+				<td>노래 제목 : <input type="text" name="title" /></td>
+			</tr>
+			<tr>
+			<td>장르:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				<select id="option">
+				  <option value="goyo">가요</option>
+				  <option value="ballade">발라드</option>
+				  <option value="ost">ost</option>
+				  <option value="pop">팝</option>
+				  <option value="pop">트로트</option>
+				  <option value="pop">알엔비</option>
+				  <option value="pop">락</option>
+				  <option value="pop">랩</option>
+				  <option value="pop">인디</option>
+				</select>
+				</td>
+			</tr>
+			<tr>
+				<td>등록일:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="Date" name="date" /></td>
+			</tr>
+		</tbody>
+	</table>
+	<button type="submit" >저장</button>
+</form>
+</html>
