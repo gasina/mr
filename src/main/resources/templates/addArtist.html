@@ -1,0 +1,38 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<title>아티스트</title>
+</head>
+
+<body>
+
+<h3>아티스트 목록</h3>
+<table>
+	<thead>
+		<tr>
+			<td>ID</td>
+			<td>이름</td>			
+		</tr>
+	</thead>
+	
+	<tr th:each="artist : ${artists}">
+		<td th:text="${artist.id}">ID</td>
+		<td th:text="${artist.name}">와이유</td>	
+	</tr>
+</table>
+
+
+<form action="addArtist" method="post">
+	<table>
+		<tbody>
+			<tr>
+				<td>가수 이름 : <input type="text" name="name" /></td>
+			</tr>
+		</tbody>
+	</table>
+	<button type="submit" >저장</button>
+</form>
+</body>
+</html>

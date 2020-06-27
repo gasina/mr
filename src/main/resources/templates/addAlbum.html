@@ -1,0 +1,57 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<title>음악</title>
+</head>
+
+<body>
+</body>
+<h3>앨범 목록</h3>
+<table>
+	<thead>
+		<tr>
+			<td>ID</td>
+			<td>제목</td>
+			<td>장르</td>
+			<td>아티스트</td>
+			<td>발매일</td>			
+		</tr>
+	</thead>
+	
+	<tr th:each="album : ${albums}">
+		<td th:text="${album.id}">ID</td>
+		<td th:text="${album.name}">제목</td>
+		<td th:text="${album.genre}">장르</td>
+		<td th:text="${album.artist.name}">아티스트</td>
+		<td th:text="${album.releaseDate}">발매일</td>	
+	</tr>
+</table>
+
+<form action="addAlbum" method="post">
+	<table>
+		<tbody>
+			<tr>
+				<td>앨범이름: <input type="text" name="name" /></td>
+			</tr>	
+			<tr>
+				<td>아티스트: <input type="text" name="artist" /></td>
+			</tr>
+			<tr>
+			<td>장르: &nbsp;&nbsp;
+				<select id="option" name="genre">
+				  <option value="gayo">가요</option>
+				  <option value="ballade">발라드</option>
+				  <option value="ost">ost</option>
+				</select>
+				</td>
+			</tr>
+			<tr>
+				<td>발매일: <input type="Date" name="releaseDate" /></td>
+			</tr>
+		</tbody>
+	</table>
+	<button type="submit" >저장</button>
+</form>
+</html>

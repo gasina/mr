@@ -9,12 +9,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -48,7 +49,7 @@ public class Music {
 	private Artist artist;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date releaseDate;
 	
 	@ManyToOne
