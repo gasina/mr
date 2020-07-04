@@ -9,7 +9,7 @@ import it.hoseo.mr.AlbumRepositoryJPA;
 
 @Component
 public class AlbumConverter implements Converter<Integer, Album>{
-
+	
 	@Autowired
 	private AlbumRepositoryJPA repo;
 	
@@ -17,6 +17,8 @@ public class AlbumConverter implements Converter<Integer, Album>{
 	public Album convert(Integer source) {
 		return repo.findById(source).get();
 	}
+	
+	
 	
 	
 }

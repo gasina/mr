@@ -25,15 +25,21 @@ public class MusicController {
 	}
 	
 	
-	@RequestMapping(path = "/addMusic", method = RequestMethod.GET)
+	@RequestMapping(path = "/music", method = RequestMethod.GET)
 	public String addMusicForm(ModelMap mm) {
 		mm.put("musics", musicRepo.findAll());
-		return "addMusic";
+		return "music";
 	}
 	
-	@RequestMapping(path = "/addMusic", method = RequestMethod.POST)
+	@RequestMapping(path = "/music", method = RequestMethod.POST)
 	public String addMusicForm(Music music) {
 		musicRepo.save(music);
-		return "redirect:addMusic";
+		return "redirect:music";
 	}
+	@RequestMapping(path = "/musiclist", method = RequestMethod.GET)
+	public String musicForString(ModelMap mm) {
+		mm.put("musiclist", musicRepo.findAll());
+		return "musiclist";
+	}
+	
 }

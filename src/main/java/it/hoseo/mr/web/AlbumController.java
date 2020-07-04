@@ -15,15 +15,22 @@ public class AlbumController {
 	@Autowired
 	private AlbumRepositoryJPA repo;
 	
-	@RequestMapping(path = "/addAlbum", method = RequestMethod.GET)
+	@RequestMapping(path = "/album2", method = RequestMethod.GET)
 	public String addForm(ModelMap mm) {
 		mm.put("albums", repo.findAll());
-		return "addAlbum";
+		return "album2";
 	}
 	
-	@RequestMapping(path = "/addAlbum", method = RequestMethod.POST)
-	public String add(Album artist) {
-		repo.save(artist);
-		return "redirect:addAlbum";
+	@RequestMapping(path = "/album2", method = RequestMethod.POST)
+	public String add(Album album) {
+		repo.save(album);
+		return "redirect:album2";
 	}
+	@RequestMapping(path = "/albumlist", method = RequestMethod.GET)
+	public String addForString(ModelMap mm) {
+		mm.put("albumlist", repo.findAll());
+		return "albumlist";
+	}
+	
+	
 }

@@ -23,15 +23,21 @@ public class ArtistController {
 	@Autowired
 	private ArtistRepositoryJPA repo;
 	
-	@RequestMapping(path = "/addArtist", method = RequestMethod.GET)
+	@RequestMapping(path = "/artist1", method = RequestMethod.GET)
 	public String addForm(ModelMap mm) {
 		mm.put("artists", repo.findAll());
-		return "addArtist";
+		return "artist1";
 	}
 	
-	@RequestMapping(path = "/addArtist", method = RequestMethod.POST)
+	@RequestMapping(path = "/artist1", method = RequestMethod.POST)
 	public String add(Artist artist) {
 		repo.save(artist);
-		return "redirect:addArtist";
+		return "redirect:artist1";
+	}
+	
+	@RequestMapping(path = "/artistlist", method = RequestMethod.GET)
+	public String addForString(ModelMap mm) {
+		mm.put("artistlist", repo.findAll());
+		return "artistlist";
 	}
 }
